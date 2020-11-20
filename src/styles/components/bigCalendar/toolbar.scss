@@ -1,0 +1,159 @@
+@import './variables';
+
+$active-background: rgba(223,223, 223, 1.00); //darken($btn-bg, 10%);
+$active-border: rgba(223,223, 223, 1.00); //darken($btn-border, 12%);
+
+.rbc-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  //box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  font-size: 16px;
+
+  .rbc-toolbar-label {
+    flex-grow:1;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  & button {
+    color: $btn-color;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    background: #4db6ac;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    background-image: none;
+    border: 1px solid $btn-border;
+    padding: .375rem 1rem;
+    border-radius: 4px;
+    line-height: normal;
+    white-space: nowrap;
+  
+    &:active,
+    &.rbc-active {
+      color: $btn-active-color;
+      background-image: none;
+      box-shadow: none; //inset 0 3px 5px rgba(0,0,0,.125);
+      background-color: $active-background;
+      border-color: $active-border;
+
+      &:hover,
+      &:focus {
+        color: $btn-color;
+        background-color: darken($btn-bg, 17%);
+        border-color: darken($btn-border, 25%);
+      }
+    }
+
+    &:focus {
+      color: $btn-color;
+      background-color: $active-background;
+      border-color: $active-border;
+    }
+
+    &:hover {
+      color: $btn-color;
+      background-color: $active-background;
+          border-color: $active-border;
+    }
+  }
+
+  & button-chevron {
+    color: $btn-color;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    background: #ffffff;
+    box-shadow: none;
+    background-image: none;
+    border: none;
+    padding: .375rem 1rem;
+    border-radius: 4px;
+    line-height: normal;
+    white-space: nowrap;
+  
+    &:active,
+    &.rbc-active {
+      color: $btn-active-color;
+      background-image: none;
+      box-shadow: none; //inset 0 3px 5px rgba(0,0,0,.125);
+      background-color: #ffffff;
+      border-color: $active-border;
+
+      &:hover,
+      &:focus {
+        color: $btn-color;
+        background-color: #ffffff;
+        border-color: darken($btn-border, 25%);
+      }
+    }
+
+    &:focus {
+      color: $btn-color;
+      background-color: #ffffff;
+      border-color: $active-border;
+    }
+
+    &:hover {
+      color: $btn-color;
+      background-color: #f9f9f9;
+          border-color: $active-border;
+    }
+  }
+
+
+
+
+
+
+}
+
+.rbc-btn-group {
+  display: inline-block;
+  white-space: nowrap;
+
+  > button:first-child:not(:last-child) {
+    border-top-right-radius: 4;
+    border-bottom-right-radius: 4;
+  }
+
+  > button:last-child:not(:first-child) {
+    border-top-left-radius: 4;
+    border-bottom-left-radius: 4;
+  }
+
+  .rbc-rtl & > button:first-child:not(:last-child) {
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .rbc-rtl & > button:last-child:not(:first-child) {
+    border-radius: 4px;
+    border-top-right-radius: 4px; //0;
+    border-bottom-right-radius: 4px; //0;
+  }
+
+  > button:not(:first-child):not(:last-child) {
+    border-radius: 4px; //0;
+  }
+
+  button + button {
+    margin-left: 15px; //-1px;
+  }
+
+  .rbc-rtl & button + button {
+    margin-left: 0;
+    margin-right: -1px;
+  }
+
+  & + &,
+  & + button {
+    margin-left: 10px;
+  }
+}

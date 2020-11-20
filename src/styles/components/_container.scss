@@ -1,0 +1,60 @@
+@import 'bigCalendar/bigCalendar';
+@import 'miniCalendar/miniCalendar';
+
+html, body, #root, .App {
+  height: 100%;
+  width: 100%;
+}
+
+.container-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .sidebar{
+    width: 300px;
+    padding: 23px 10px 10px 10px;
+    .sidebar__create-button{
+      color: #fff;
+      display: inline-block;
+      margin: 0;
+      text-align: center;
+      vertical-align: middle;
+      // background: #4db6ac;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+      background-image: none;
+      border: 1px solid #4db6ac;
+      padding: .375rem 1rem;
+      border-radius: 4px;
+      line-height: normal;
+      white-space: nowrap;
+    }
+  }
+  .main-content {
+    width: calc(100% - 300px);
+    height: 100%;
+  }
+}
+
+.modal {
+  max-width: 600px;
+  overflow-y: initial;
+}
+
+.create-event-form{
+  margin-top: 40px;
+  .input-field.col label {
+    left: 0;
+  }
+}
+
+.rbc-day-slot .rbc-event{
+  border: 1px solid #264d49;
+  background-color:  #4db6ac;
+}
+
+.rdtPicker {
+  top: 100%;
+   td, th {
+    padding: 10px
+  }
+}
