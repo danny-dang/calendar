@@ -32,10 +32,15 @@ export default class Container extends Component {
   fetchEvent() {
     fetch("http://127.0.0.1:8000/api/appointment")
       .then(res => res.json())
-      .then(data => this.update_string_date(data))
+      .then(data => this.updateStringDate(data))
       .then(data => {
         this.setState({ events: data });
       });
+  }
+
+  updateStringDate(data) {
+    data.map(x => ((x.start = new Date(x.start)), (x.end = new Date(x.end))));
+    return data;
   }
 
   toggleCreateModal(isShow) {
