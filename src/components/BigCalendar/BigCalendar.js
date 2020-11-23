@@ -45,11 +45,6 @@ export default class BigCalendar extends Component {
     this.handleNavigate = this.handleNavigate.bind(this)
   }
 
-  updateStringDate(data) {
-    data.map(x => ((x.start = new Date(x.start)), (x.end = new Date(x.end))));
-    return data;
-  }
-
   async handleSelect({ start, end }) {
     await this.props.toggleCreateModal(true)
     await this.props.setStartEndCreateEvent(start, end)
